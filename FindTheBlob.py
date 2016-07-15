@@ -96,24 +96,36 @@ def findColorSpot(picture, color):
 # 4-YELLOW
 
 ######################Code Starts Here##################################
-# loop until you get to your destination
-    # picture = takePicture()
-    # if(findColorSpot (picture,4) == -1)
-        #
-    # else
-        #forward
 pic = takePicture()
-color = findColorSpot(pic, 3)
+colorNum = input("Pick a number from 1 to 4, and see what color you get!")
+x = int(colorNum)
+color = findColorSpot(pic, x)
 
-while(color == 0):
-  turnBy(15)
-  show(pic)
-  pic = takePicture()
-  color = findColorSpot(pic, 3)
+if(x <= 4) and (x >= 1):
+    while (x <=4) and (x >= 1):
+        while(color == 0):
+            turnBy(15)
+            show(pic)
+            pic = takePicture()
+            color = findColorSpot(pic, x)
 
+        if(color > 0):
+            turnBy(30)
+            forward(1, 5)
+            pic = takePicture()
+            color = findColorSpot(pic, x)         
+            backward(1, 5)
+        
+    colorNum = input("Pick another number!")
+    x = int(colorNum)
+    #The two lines above do not work as of yet. I am trying to loop the function here so that the robot can find any color you tell it to find, as many times as you want. 
 
-         
-
-
+elif(x > 4) or (x <= 0):
+    colorNum = input("That number isn't between 1 and 4. I'm not stupid, you know. Pick again!")
+    #Hasn't been tested yet.
+    
+else:
+    colorNum = input("What?! That isn't even a number, man. Pick a number between 1 and 4!")
+    #Hasn't been tested yet.
 
 
