@@ -1,0 +1,11 @@
+p {
+	font-size: 20px;
+	text-align: center;
+	font-family: arial;
+	color: rgb(0, 123, 167);
+	border-style: solid;
+	border-color: blue;
+	cursor: pointer;
+	margin-left: 500px;
+	margin-right: 500px;
+}
