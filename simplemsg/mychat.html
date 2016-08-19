@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang = 'en'>
+<head>
+	<title></title>
+	<style>
+		#msg{
+			width: 345px;
+			height: 100px;
+		}
+	</style>
+</head>
+<body>
+	<input placeholder = "First Name..." type = "text" id = "first">
+	<input placeholder = "Last Name..." type = "text" id = "last">
+	<br>
+	<input placeholder = "Message..." type = "text" id = "msg">
+	<button onclick = "sendMessage()" onclick = "getData()" id = "btn">Send!</button>
+	<div id = "database_msg"></div>
+	<script src="https://www.gstatic.com/firebasejs/3.2.1/firebase.js"></script>
+	<script>
+  	// Initialize Firebase
+  	var config = {
+    	apiKey: "AIzaSyA48567ySvrRxds1fnazELNlsbd68-nAEk",
+    	authDomain: "mlbsquad-830da.firebaseapp.com",
+    	databaseURL: "https://mlbsquad-830da.firebaseio.com",
+    	storageBucket: "mlbsquad-830da.appspot.com",
+  	};
+  	firebase.initializeApp(config);
+	</script>
+	<script src="https://code.jquery.com/jquery-3.1.0.min.js"></script>
+	<script type = "text/javascript" src = "chat.js"></script>
+</body>
+</html>

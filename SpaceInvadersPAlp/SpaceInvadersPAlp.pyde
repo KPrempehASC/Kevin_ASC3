@@ -55,19 +55,19 @@ def draw():
         for e in range(len(aliens)):
             if(aliens[r][e] == "1"):
                 fill(255)
-                rect(r*75 + alienX, e*50 + alienY , 40, 30)
+                rect(r*75 + alienX, e*50 + alienY, 40, 30)
 
-            if bulletY == alienY:
-                print("Inside BulletY")
-                if bulletX > alienX and bulletX < alienX + 40:
-                    print("Inside BulletX")
-                    aliens[r][e] = "0"
-                    bulletFired = False
+                if bulletY <= e*50 + alienY:
+                    print("Inside BulletY")
+                    if bulletX > r*75 + alienX and bulletX < r*75 + alienX + 40:
+                        print("Inside BulletX")
+                        aliens[r][e] = "0"
+                        bulletFired = False
                 
-        '''alienX += alien_Xspd
+        alienX += alien_Xspd
         if alienX < 0 or alienX > 150:
             alienY += 2.5
-            alien_Xspd *= -1'''
+            alien_Xspd *= -1
                 
                 
                 
